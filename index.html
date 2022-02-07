@@ -1,9 +1,54 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>GFG User Details</title>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+</head>
+
 <body>
+	<section>
 
-<h1>test</h1>
-<p>test</p>
+		<!-- TABLE CONSTRUCTION-->
+		<table id='table'>
+			<!-- HEADING FORMATION -->
+			<tr>
+				<th>GFG UserHandle</th>
+				<th>Practice Problems</th>
+	
+			</tr>
 
+			<script>
+				$(document).ready(function () {
+
+					// FETCHING DATA FROM JSON FILE
+					$.getJSON("songs.json",
+							function (data) {
+						var song = '';
+
+						// ITERATING THROUGH OBJECTS
+						$.each(data, function (key, value) {
+
+							//CONSTRUCTION OF ROWS HAVING
+							// DATA FROM JSON OBJECT
+							song += '<tr>';
+							song += '<td>' +
+								value.name + '</td>';
+
+							song += '<td>' +
+								value.nr + '</td>';
+
+							song += '</tr>';
+						});
+						
+						//INSERTING ROWS INTO TABLE
+						$('#table').append(song);
+					});
+				});
+			</script>
+	</section>
 </body>
+
 </html>
