@@ -23,6 +23,8 @@ $(document).ready(function () {
             timesRun += 1;
             if(timesRun === 40) {
                 clearInterval(interval1);
+                const audio = new Audio("sound.wav");
+                audio.play();
             }
         }, 111); 
 
