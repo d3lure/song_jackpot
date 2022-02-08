@@ -1,3 +1,3 @@
-# song_chooser
+# Song Picker
 
 Maszyna losująca piosenki. I tyle.
