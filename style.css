@@ -1,22 +1,39 @@
+body {
+  background: rgb(33, 33, 37);
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    background-color: #fee6e3;
-    border: 2px solid #111;
-    border-radius: 8px;
-    padding: 10px;
+    padding: 20px;
     grid-column-gap: 20px;
     font-family: Inter,sans-serif;
-    text-align: center;
-    padding-left: auto;
-    padding-right: auto;
+    margin-left: 20px;
+}
+
+.container {
     height: 33vh;
+    width: 20vw;
+    background-color: #4680fd;
+    border: 2px solid #111;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 28vh;
+    font-size: large;
+}
+
+.container p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Button */
 #start {
+  margin: auto;
+  margin-top: 100px;
   align-items: center;
-  background-color: #fee6e3;
+  background-color: #4680fd;
   border: 2px solid #111;
   border-radius: 8px;
   box-sizing: border-box;
@@ -29,7 +46,7 @@
   justify-content: center;
   line-height: 24px;
   max-width: 100%;
-  padding: 0 25px;
+  padding: 0 50px;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -37,7 +54,6 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-
 #start:after {
   background-color: #111;
   border-radius: 8px;
@@ -52,20 +68,16 @@
   transition: transform .2s ease-out;
   z-index: -1;
 }
-
 #start:hover:after {
   transform: translate(0, 0);
 }
-
 #start:active {
-  background-color: #ffdeda;
+  background-color: #4680fd;
   outline: 0;
 }
-
 #start:hover {
   outline: 0;
 }
-
 @media (min-width: 768px) {
   #start {
     padding: 0 40px;
