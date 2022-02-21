@@ -3,6 +3,9 @@ $(document).ready(function () {
     const select = new Audio("sounds/select.wav");
 
     var picked_songs = [];
+    var count = 50;
+
+    document.getElementById("count").innerHTML = count;
 
     function roll(n) {
         $.getJSON("songs.json", function(data) {
@@ -22,25 +25,29 @@ $(document).ready(function () {
 
         var interval1 = setInterval(function() {
             roll(1);
-            if(timesRun >= 30) clearInterval(interval1);
+            if(timesRun >= (count-(3*count/7))) clearInterval(interval1);
         }, 50);
         
         var interval2 = setInterval(function() {
             roll(2);
-            if(timesRun >= 37) clearInterval(interval2);
+            if(timesRun >= (count-(2*count/7))) clearInterval(interval2);
         }, 50); 
 
         var interval3 = setInterval(function() {
             roll(3);
-            if(timesRun >= 44) clearInterval(interval3);
+            if(timesRun >= (count-(count/7))) clearInterval(interval3);
         }, 50); 
 
         var interval4 = setInterval(function() {
-            timesRun += 0.5;
             roll(4);
+            if(timesRun >= count) clearInterval(interval4);
+        }, 50);
+        
+        var interval5 = setInterval(function() {
+            timesRun += 0.5;
             roll_img();
-            if(timesRun >= 51) {
-                clearInterval(interval4);
+            if(timesRun >= count+(count/7)) {
+                clearInterval(interval5);
                 end.play();
             }
         }, 50); 
@@ -70,7 +77,17 @@ $(document).ready(function () {
         var that = this;
         roll_everything();
         $(this).attr("disabled", true);
-        setTimeout(function() { enableSubmit(that) }, 6000);
+        setTimeout(function() { enableSubmit(that) }, 100*count);
+    });
+
+    $("#add").click(function() {
+        count += 10;
+        document.getElementById("count").innerHTML = count;
+    });
+
+    $("#sub").click(function() {
+        count -= 10;
+        document.getElementById("count").innerHTML = count;
     });
 
 });
