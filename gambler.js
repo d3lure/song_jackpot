@@ -38,6 +38,7 @@ $(document).ready(function () {
         var interval4 = setInterval(function() {
             timesRun += 0.5;
             roll(4);
+            roll_img();
             if(timesRun >= 51) {
                 clearInterval(interval4);
                 end.play();
@@ -53,8 +54,12 @@ $(document).ready(function () {
             picked_songs.includes(data[index])) return getOnlyId(n, data);
 
         picked_songs[n-1] = data[index];
-        //console.log(picked_songs);
         return index;
+    }
+
+    function roll_img() {
+        img = "<img id='photo' src='assets/" + Math.floor(Math.random() * 3 + 1) + ".jpg'>";
+        $('#photo').replaceWith(img);
     }
 
     var enableSubmit = function(ele) {

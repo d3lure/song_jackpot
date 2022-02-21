@@ -1,31 +1,52 @@
 body {
   background: rgb(33, 33, 37);
+  /* color: white; */
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding: 20px;
-    grid-column-gap: 20px;
-    font-family: Inter,sans-serif;
-    margin-left: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 20px;
+  grid-column-gap: 20px;
+  font-family: Inter,sans-serif;
+  margin-left: 20px;
 }
 
 .container {
-    height: 33vh;
-    width: 20vw;
-    background-color: #4680fd;
-    border: 2px solid #111;
-    border-radius: 8px;
-    text-align: center;
-    line-height: 28vh;
-    font-size: large;
+  height: 33vh;
+  width: 20vw;
+  background-color: #5187fd;
+  border: 2px solid #111;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 28vh;
+  font-size: large;
 }
 
 .container p {
   line-height: 1.5;
   display: inline-block;
   vertical-align: middle;
+}
+
+.photo-section {
+  margin: auto;
+  width: 100%;
+  display: inline-block;
+  justify-content: center;
+  padding-top: 30px;
+  text-align: center;
+  color: #5187fd;
+}
+
+/* .photo-section p {
+  margin-right: auto;
+} */
+
+#photo {
+  width: 100px;
+  height: auto;
+  clip-path: circle(50px at center);
 }
 
 /* Button */
