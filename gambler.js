@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    const select = new Audio("sounds/select.wav");
+    const select = new Audio("assets/sounds/select.wav");
 
     var picked_songs = [];
     var count = 50;
@@ -21,7 +21,7 @@ $(document).ready(function () {
         select.play();
         
         var timesRun = 0;
-        const end = new Audio("sounds/end.wav");
+        const end = new Audio("assets/sounds/end.wav");
 
         var interval1 = setInterval(function() {
             roll(1);
